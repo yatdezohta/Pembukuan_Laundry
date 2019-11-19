@@ -16,3 +16,14 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', 'AdminController@dashboard');
+Route::get('/login', 'AdminController@login');
+Route::get('/Customer', 'AdminController@Customer');
+Route::get('/CustomerTambah', 'AdminController@CustomerTambah');
+Route::get('/CustomerEdit', 'AdminController@CustomerEdit');
+Route::get('/Transaksi', 'AdminController@Transaksi');
+Route::get('/TransaksiEdit', 'AdminController@TransaksiEdit');
+Route::get('/TransaksiTambah', 'AdminController@TransaksiTambah');
+Route::get('/Pengeluaran', 'AdminController@Pengeluaran');
+Route::get('/PengeluaranEdit', 'AdminController@PengeluaranEdit');
+Route::get('/PengeluaranTambah', 'AdminController@PengeluaranTambah');
+Route::get('/Laporan', 'AdminController@Laporan');

@@ -27,6 +27,7 @@
 
     <div class="box-footer">
       <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="{{route ('Cust.index')}}"  class="btn btn-default">Kembali</a>      
     </div>
   </form>
 </div>

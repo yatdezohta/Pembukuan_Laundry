@@ -9,6 +9,9 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Data Pelanggan</h3>
+            <div class="box-tools pull-right">
+              <a href="{{route('Cust.create')}}" class="btn btn-box-tool"><i class="fa fa-plus-circle"></i>Tambah Baru</a>
+</div>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -22,33 +25,21 @@
                 <th>Aksi</th>
               </tr>
               </thead>
-              <tbody>
+                <?php $number = 0;?>
+                @foreach ($customer as $value)
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ ++ $number}}.</td>
+                <td>{{ $value->nama_cust}}</td>
+                <td>{{ $value->nohp}}</td>
+                <td>{{ $value->alamat}}</td>
                 <td>
-                   <button type="button" class="btn btn-block btn-danger">Danger</button>
-                   <button type="button" class="btn btn-block btn-primary">Primary</button>
+                   <button type="button" class="btn  btn-danger">Danger</button>
+                   <button type="button" class="btn  btn-primary">Primary</button>
                 </td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+                @endforeach
 
-              </tbody>
+
             </table>
           </div>
           <!-- /.box-body -->

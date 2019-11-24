@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', 'AdminController@dashboard');
 Route::get('/login', 'AdminController@login');
-Route::get('/Customer', 'AdminController@Customer');
-Route::get('/CustomerTambah', 'AdminController@CustomerTambah');
-Route::get('/CustomerEdit', 'AdminController@CustomerEdit');
+// Route::get('/Customer', 'AdminController@Customer');
+// Route::get('/CustomerTambah', 'AdminController@CustomerTambah');
+// Route::get('/CustomerEdit', 'AdminController@CustomerEdit');
 Route::get('/Transaksi', 'AdminController@Transaksi');
 Route::get('/TransaksiEdit', 'AdminController@TransaksiEdit');
 Route::get('/TransaksiTambah', 'AdminController@TransaksiTambah');

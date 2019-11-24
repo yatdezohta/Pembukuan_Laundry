@@ -16,7 +16,10 @@
               <thead>
               <tr>
                 <th>No</th>
-                <th>Tipe Laundry</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Jabatan</th>
+                <th>Aksi</th>
               </tr>
               </thead>
               <tbody>
@@ -25,7 +28,10 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>
+                   <button type="button" class="btn btn-block btn-danger">Danger</button>
+                   <button type="button" class="btn btn-block btn-primary">Primary</button>
+                </td>
               </tr>
               <tr>
                 <td></td>

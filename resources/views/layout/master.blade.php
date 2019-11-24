@@ -172,7 +172,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div> -->
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="login" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -224,28 +224,36 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Laundry</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Tipe Laundry</a></li>
+            <li><a href="Laundry"><i class="fa fa-circle-o"></i>Laundry</a></li>
+            <li><a href="Tipe"><i class="fa fa-circle-o"></i>Tipe Laundry</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="Customer">
             <span>Pelanggan</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
+        <!-- CARA NGELINK YANG BENER -->
+        <li><a href="Transaksi"></i> <span>Transaksi</span></a></li>
+
+        <!-- <li class="treeview">
+          <a href="Transaksi">
             <span>Transaksi</span>
           </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
+        </li> -->
+        <li>
+          <a href="Pengeluaran">
             <span>Pengeluaran</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
              <span>Laporan</span>
+          </a>
+        </li>
+        <li>
+          <a href="User">
+            <span>User</span>
           </a>
         </li>
       </ul>

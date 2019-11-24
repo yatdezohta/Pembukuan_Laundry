@@ -19,8 +19,7 @@ class CreateDetailTransaksisTable extends Migration
                       $table->unsignedBigInteger('id_harga_laundry');
                       $table->unsignedBigInteger('id_tipe_laundry');
                       $table->integer('Jumlah');
-                      $table->integer('harga');
-                      $table->integer('total_harga');
+                      $table->integer('harga');                    
                       $table->timestamps();
 
                       $table->foreign('id_transaksi')->references('id_transaksi')->on('transaksis');

@@ -15,6 +15,10 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+            <form id="hapus" method="post" action="" style="display:none">
+              @csrf
+              @method('DELETE')
+            </form>
             <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr>
@@ -26,15 +30,16 @@
               </tr>
               </thead>
                 <?php $number = 0;?>
-                @foreach ($customer as $value)
+                @foreach ($data as $value)
               <tr>
                 <td>{{ ++ $number}}.</td>
                 <td>{{ $value->nama_cust}}</td>
                 <td>{{ $value->nohp}}</td>
                 <td>{{ $value->alamat}}</td>
                 <td>
-                   <button type="button" class="btn  btn-danger">Danger</button>
-                   <button type="button" class="btn  btn-primary">Primary</button>
+                  <a href="{{ route('Cust.edit', ['Cust' => $value->id_cust]) }}"><button type="button" class="btn btn-primary">Update</button></a>
+                <a href="" onclick="event.preventDefault(); if(confirm('Apakah anda yakin?')){$('form#hapus').attr('action', '{{ route ('Cust.destroy', ['Cust' => $value->id_cust]) }}').submit(); }">
+                  <button type="button" class="btn  btn-danger">Delete</button></a>
                 </td>
               </tr>
                 @endforeach

@@ -17,7 +17,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::all();
         return view('customer.cust', [
-          'customer' => $customer
+          'data' => $customer
         ]);
     }
 
@@ -28,7 +28,9 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customer.tambah');
+        return view('customer.tambah', [
+          'data' => new Customer(),
+        ]);
     }
 
     /**
@@ -39,7 +41,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = new Customer();
+        $customer->nama_cust = $request->input('nama_cust');
+        $customer->nohp = $request->input('nohp');
+        $customer->alamat = $request->input('alamat');
+        $customer->save();
+        return redirect ('Cust');
     }
 
     /**
@@ -61,7 +68,9 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('customer.tambah',[
+          'data'=>Customer::findOrFail($id)
+        ]);
     }
 
     /**
@@ -73,7 +82,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $customer = Customer::findOrFail($id);
+      $customer->nama_cust = $request->input('nama_cust');
+      $customer->nohp = $request->input('nohp');
+      $customer->alamat = $request->input('alamat');
+      $customer->save();
+      return redirect('Cust');
     }
 
     /**
@@ -84,6 +98,8 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $customer = Customer::findOrFail($id);
+      $customer->delete();
+      return redirect('Cust');
     }
 }

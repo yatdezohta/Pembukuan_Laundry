@@ -9,6 +9,9 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Data Transaksi</h3>
+            <div class="box-tools pull-right">
+              <a href="{{route('Transaksi.create')}}" class="btn btn-box-tool"><i class="fa fa-plus-circle"></i>Tambah Baru</a>
+</div>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -25,39 +28,24 @@
                 <th>Aksi</th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              <?php $number = 0;?>
+              @foreach ($data as $value)
+            <tr>
+              <td>{{ ++ $number}}.</td>
+              <td>{{ $value->amount}}</td>
+              <td>{{ $value->start_date}}</td>
+              <td>{{ $value->end_date}}</td>
+              <td>{{ $value->status}}</td>
+              <td>{{ $value->customer_id}}</td>
+              <td>{{ $value->user_id}}</td>                            
+              <td>
+                <a href="{{ route('Transaksi.edit', ['Transaksi' => $value->id_Transaksi]) }}"><button type="button" class="btn btn-primary">Update</button></a>
+              <a href="" onclick="event.preventDefault(); if(confirm('Apakah anda yakin?')){$('form#hapus').attr('action', '{{ route ('Transaksi.destroy', ['Transaksi' => $value->id_Transaksi]) }}').submit(); }">
+                <button type="button" class="btn  btn-danger">Delete</button></a>
+              </td>
+            </tr>
+              @endforeach
 
-              </tbody>
             </table>
           </div>
           <!-- /.box-body -->

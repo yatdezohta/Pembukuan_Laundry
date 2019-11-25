@@ -20,6 +20,7 @@
                 <th>Unit</th>
                 <th>Tipe Laundry</th>
                 <th>Harga</th>
+                <th>Aksi</th>                
               </tr>
               </thead>
               <?php $number = 0;?>

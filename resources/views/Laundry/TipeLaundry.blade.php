@@ -22,6 +22,7 @@
               <tr>
                 <th>No</th>
                 <th>Tipe Laundry</th>
+                <th>Aksi</th>
               </tr>
               </thead>
               <?php $number = 0;?>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Transaksi;
 
 class TransaksiController extends Controller
 {
@@ -13,7 +15,10 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+      $transaksi = Transaksi::all();
+      return view('Transaksi.transaksi', [
+        'data' => $transaksi
+      ]);
     }
 
     /**

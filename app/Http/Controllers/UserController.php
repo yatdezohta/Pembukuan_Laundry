@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Pengeluaran;
+use App\Users;
 
-
-class PengeluaranController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class PengeluaranController extends Controller
      */
     public function index()
     {
-      $pengeluaran = Pengeluaran::all();
-      return view('Pengeluaran.pengeluaran', [
-        'data' => $pengeluaran
+      $users = Users::all();
+      return view('User.User', [
+        'data' => $users
       ]);
     }
 

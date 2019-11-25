@@ -8,7 +8,10 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Data Transaksi</h3>
+            <h3 class="box-title">Data Pengeluaran</h3>
+            <div class="box-tools pull-right">
+              <a href="{{route('Pengeluaran.create')}}" class="btn btn-box-tool"><i class="fa fa-plus-circle"></i>Tambah Baru</a>
+            </div>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -18,43 +21,24 @@
                 <th>No</th>
                 <th>Keterangan</th>
                 <th>harga</th>
-                <th>catatan</th>          
+                <th>catatan</th>
                 <th>Aksi</th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-              </tbody>
+              <?php $number = 0;?>
+              @foreach ($data as $value)
+            <tr>
+              <td>{{ ++ $number}}.</td>
+              <td>{{ $value->deskripsi}}</td>
+              <td>{{ $value->harga}}</td>
+              <td>{{ $value->catatan}}</td>
+              <td>
+                <a href="{{ route('Pengeluaran.edit', ['Pengeluaran' => $value->id_Pengeluaran]) }}"><button type="button" class="btn btn-primary">Update</button></a>
+              <a href="" onclick="event.preventDefault(); if(confirm('Apakah anda yakin?')){$('form#hapus').attr('action', '{{ route ('Pengeluaran.destroy', ['Pengeluaran' => $value->id_Pengeluaran]) }}').submit(); }">
+                <button type="button" class="btn  btn-danger">Delete</button></a>
+              </td>
+            </tr>
+              @endforeach
             </table>
           </div>
           <!-- /.box-body -->

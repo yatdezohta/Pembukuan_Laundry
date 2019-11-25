@@ -37,6 +37,9 @@ Route::get('/LaundryTambah', 'AdminController@LaundryTambah');
 // Route::get('/TipeTambah', 'AdminController@TipeTambah');
 Route::get('/Laporan', 'AdminController@Laporan');
 
+Route::resource('Transaksi', 'TransaksiController');
+Route::resource('Pengeluaran', 'PengeluaranController');
 Route::resource('Laundry', 'LaundryController');
 Route::resource('Tipe', 'TipeController');
 Route::resource('Cust', 'CustomerController');
+Route::resource('User', 'UserController');

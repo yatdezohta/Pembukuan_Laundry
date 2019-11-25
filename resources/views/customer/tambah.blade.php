@@ -13,11 +13,12 @@
   <!-- form start -->
   @if($data->id_cust > 0)
   <form role="form" method="post" action="{{route ('Cust.update', ['Cust' => $data->id_cust]) }}">
+  @method('PUT')
   @else
   <form role="form" method="post" action="{{route ('Cust.store')}}">
-    @endif
+  @endif
     @csrf
-    @method('PUT')
+
     <div class="box-body">
       <div class="form-group">
         <label for="tambahCust">Nama Pelanggan</label>

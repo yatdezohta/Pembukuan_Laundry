@@ -13,11 +13,12 @@
   <!-- form start -->
   @if($data->id_tipe > 0)
   <form role="form" method="post" action="{{route ('Tipe.update', ['Tipe' => $data->id_tipe]) }}">
+  @method('PUT')
   @else
   <form role="form" method="post" action="{{route ('Tipe.store')}}">
      @endif
     @csrf
-    @method('PUT')
+
     <div class="box-body">
       <div class="form-group">
         <label for="tambahTipe">Tipe Laundry</label>

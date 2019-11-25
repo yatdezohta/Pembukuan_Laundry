@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Tipe;
 
 class TipeController extends Controller
 {
@@ -13,7 +15,10 @@ class TipeController extends Controller
      */
     public function index()
     {
-        //
+      $Tipe = Tipe::all();
+      return view('Laundry.TipeLaundry', [
+        'data' => $Tipe
+      ]);
     }
 
     /**
@@ -23,7 +28,9 @@ class TipeController extends Controller
      */
     public function create()
     {
-        //
+      return view('Laundry.tambahTipe', [
+        'data' => new Tipe(),
+      ]);
     }
 
     /**
@@ -34,7 +41,10 @@ class TipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $Tipe = new Tipe();
+      $Tipe->tipe_laundry = $request->input('tipe_laundry');
+      $Tipe->save();
+      return redirect ('Tipe');
     }
 
     /**
@@ -56,7 +66,9 @@ class TipeController extends Controller
      */
     public function edit($id)
     {
-        //
+      return view('Laundry.tambahTipe',[
+        'data'=>Tipe::findOrFail($id)
+      ]);
     }
 
     /**
@@ -68,7 +80,10 @@ class TipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $Tipe = Tipe::findOrFail($id);
+      $Tipe->tipe_laundry = $request->input('tipe_laundry');
+      $Tipe->save();
+      return redirect ('Tipe');
     }
 
     /**
@@ -79,6 +94,8 @@ class TipeController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $Tipe = Tipe::findOrFail($id);
+      $Tipe->delete();
+      return redirect('Tipe');
     }
 }

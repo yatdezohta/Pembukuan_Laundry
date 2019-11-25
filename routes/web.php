@@ -32,10 +32,11 @@ Route::get('/UserTambah', 'AdminController@UserTambah');
 Route::get('/Laundry', 'AdminController@Laundry');
 Route::get('/LaundryEdit', 'AdminController@LaundryEdit');
 Route::get('/LaundryTambah', 'AdminController@LaundryTambah');
-Route::get('/Tipe', 'AdminController@Tipe');
-Route::get('/TipeEdit', 'AdminController@TipeEdit');
-Route::get('/TipeTambah', 'AdminController@TipeTambah');
+// Route::get('/Tipe', 'AdminController@Tipe');
+// Route::get('/TipeEdit', 'AdminController@TipeEdit');
+// Route::get('/TipeTambah', 'AdminController@TipeTambah');
 Route::get('/Laporan', 'AdminController@Laporan');
 
-
+Route::resource('Laundry', 'LaundryController');
+Route::resource('Tipe', 'TipeController');
 Route::resource('Cust', 'CustomerController');

@@ -8,10 +8,15 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Data Pelanggan</h3>
+            <h3 class="box-title">Tipe Laundry</h3>
+            <div class="box-tools pull-right">
+              <a href="{{route('Tipe.create')}}" class="btn btn-box-tool"><i class="fa fa-plus-circle"></i>Tambah Baru</a>
+</div>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+            <form  method="post" action="">
+              @csrf
             <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr>
@@ -19,30 +24,18 @@
                 <th>Tipe Laundry</th>
               </tr>
               </thead>
-              <tbody>
+              <?php $number = 0;?>
+              @foreach ($data as $value)
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+              <td>{{ ++ $number}}.</td>
+              <td>{{ $value->tipe_laundry}}</td>
+              <td>
+                <a href="{{ route('Tipe.edit', ['Tipe' => $value->id_tipe]) }}"><button type="button" class="btn btn-primary">Update</button></a>
+              <a href="" onclick="event.preventDefault(); if(confirm('Apakah anda yakin?')){$('form#hapus').attr('action', '{{ route ('Tipe.destroy', ['Tipe' => $value->id_tipe]) }}').submit(); }">
+                <button type="button" class="btn  btn-danger">Delete</button></a>
+              </td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-              </tbody>
+              @endforeach
             </table>
           </div>
           <!-- /.box-body -->

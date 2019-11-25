@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\;
+use Illuminate\Support\Facades\DB;
+use App\Laundry;
 
 class LaundryController extends Controller
 {
@@ -14,7 +15,10 @@ class LaundryController extends Controller
      */
     public function index()
     {
-        //
+      $Laundry = Laundry::all();
+      return view('Laundry.Laundry', [
+        'data' => $Laundry
+      ]);
     }
 
     /**

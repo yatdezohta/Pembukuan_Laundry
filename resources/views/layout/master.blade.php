@@ -247,7 +247,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="Laporan">
              <span>Laporan</span>
           </a>
         </li>
@@ -284,7 +284,7 @@
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
-    
+
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed

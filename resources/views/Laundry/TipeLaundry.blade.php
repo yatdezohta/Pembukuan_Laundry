@@ -15,8 +15,10 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
-            <form  method="post" action="">
+            <form id="hapus" method="post" action="" style="display:none">
               @csrf
+              @method('DELETE')
+            </form>
             <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr>

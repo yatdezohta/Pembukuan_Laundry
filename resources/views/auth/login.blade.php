@@ -36,7 +36,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Silahkan Login</p>
 
-    <form action="Laporan" method="get">
+    <form action="{{ route('login') }}" method="post">
+      @csrf
+
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

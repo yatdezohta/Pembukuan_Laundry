@@ -13,17 +13,16 @@ class CreateHargaLaundriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('harga__laundries', function (Blueprint $table) {
+        Schema::create('det__laundries', function (Blueprint $table) {
           $table->bigIncrements('id_detLaundry');
+          $table->string('kode_laundry');
           $table->string('nama_laundry');
-          $table->string('unit');
+          $table->string('jumlah_kilo');
           $table->unsignedBigInteger('id_tipe_laundry');
           $table->integer('harga');
-          $table->unsignedBigInteger('user_id');
           $table->timestamps();
 
           $table->foreign('id_tipe_laundry')->references('id_tipe')->on('tipe__laundries');
-          $table->foreign('user_id')->references('id_user')->on('users');
         });
     }
 
@@ -34,6 +33,6 @@ class CreateHargaLaundriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('harga__laundries');
+        Schema::dropIfExists('det__laundries');
     }
 }

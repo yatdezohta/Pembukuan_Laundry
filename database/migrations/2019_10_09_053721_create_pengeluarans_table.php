@@ -18,10 +18,7 @@ class CreatePengeluaransTable extends Migration
             $table->string('deskripsi');
             $table->integer('harga');
             $table->text('catatan')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->timestamps();
-
-            $table->foreign('user_id')->references('id_user')->on('users');
+            $table->timestamps();          
         });
     }
 

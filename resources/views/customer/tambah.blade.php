@@ -22,15 +22,15 @@
     <div class="box-body">
       <div class="form-group">
         <label for="tambahCust">Nama Pelanggan</label>
-        <input type="text" class="form-control" id="nama_cust" name="nama_cust"  placeholder="Nama Pelanggan" value="{{ $data->nama_cust }}">
+        <input type="text" class="form-control" id="nama_cust" name="nama_cust"  placeholder="Nama Pelanggan" value="{{ $data->nama_cust }}" required>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">No HP</label>
-        <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No HP" value="{{ $data->nohp }}">
+        <input type="text" class="form-control" id="nohp" name="nohp" placeholder="No HP" value="{{ $data->nohp }}" required>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Alamat</label>
-        <input type="text" class="form-control" id="alamat" name="alamat"placeholder="Alamat" value="{{ $data->alamat }}">
+        <input type="text" class="form-control" id="alamat" name="alamat"placeholder="Alamat" value="{{ $data->alamat }}" required>
       </div>
 
     </div>

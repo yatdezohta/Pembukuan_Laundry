@@ -9,4 +9,8 @@ class Laundry extends Model
   protected $table = 'harga__laundries';
   protected $primaryKey = 'id_detLaundry';
   public $timestamps = true;
+
+  public function Transaksi(){
+        return $this->hasMany('App\Transaksi','id_transaksi');
+    }
 }

@@ -29,7 +29,9 @@ class PengeluaranController extends Controller
      */
     public function create()
     {
-        //
+      return view('Pengeluaran.tambahPengeluaran', [
+        'data' => new Pengeluaran(),
+      ]);
     }
 
     /**
@@ -40,7 +42,12 @@ class PengeluaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $pengeluaran = new Pengeluaran();
+      $pengeluaran->deskripsi = $request->input('deskripsi');
+      $pengeluaran->harga = $request->input('harga');
+      $pengeluaran->catatan = $request->input('catatan');
+      $pengeluaran->save();
+      return redirect ('Pengeluaran');
     }
 
     /**
@@ -51,7 +58,7 @@ class PengeluaranController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -62,7 +69,9 @@ class PengeluaranController extends Controller
      */
     public function edit($id)
     {
-        //
+      return view('Pengeluaran.tambahPengeluaran',[
+        'data'=>Pengeluaran::findOrFail($id)
+      ]);
     }
 
     /**
@@ -74,7 +83,12 @@ class PengeluaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $pengeluaran = Pengeluaran::findOrFail($id);
+      $pengeluaran->deskripsi = $request->input('deskripsi');
+      $pengeluaran->harga = $request->input('harga');
+      $pengeluaran->catatan = $request->input('catatan');
+      $pengeluaran->save();
+      return redirect('Pengeluaran');
     }
 
     /**
@@ -85,6 +99,8 @@ class PengeluaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $pengeluaran = Pengeluaran::findOrFail($id);
+      $pengeluaran->delete();
+      return redirect('Pengeluaran');
     }
 }

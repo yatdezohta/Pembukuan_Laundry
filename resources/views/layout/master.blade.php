@@ -36,7 +36,7 @@
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>Hello</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Hello Laundry</b></span>
     </a>
@@ -137,10 +137,10 @@
           </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-              <span class="hidden-xs">Alexander Pierce</span>
-            </a>
+              <!-- <span class="hidden-xs">Alexander Pierce</span> -->
+            <!-- </a> --> 
             <ul class="dropdown-menu">
               <!-- User image -->
               <!-- <li class="user-header"> -->
@@ -246,16 +246,16 @@
             <span>Pengeluaran</span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="Laporan">
              <span>Laporan</span>
           </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a href="User">
             <span>User</span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </section>
     <!-- /.sidebar -->

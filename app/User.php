@@ -28,11 +28,26 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function roles()
+        {
+            return $this->belongsToMany(Role::class);
+        }
+
+    public function hasRole($roleName)
+       {
+           foreach ($this->roles as $role)
+           {
+               if ($role->role_name === $roleName) return true;
+           }
+               return false;
+       }
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
+
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

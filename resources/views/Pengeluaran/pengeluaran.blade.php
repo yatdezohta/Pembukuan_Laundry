@@ -15,6 +15,10 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+            <!-- <form id="hapus" method="post" action="" style="display:none">
+              @csrf
+              @method('DELETE')
+            </form> -->
             <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr>
@@ -33,9 +37,9 @@
               <td>{{ $value->harga}}</td>
               <td>{{ $value->catatan}}</td>
               <td>
-                <a href="{{ route('Pengeluaran.edit', ['Pengeluaran' => $value->id_Pengeluaran]) }}"><button type="button" class="btn btn-primary">Update</button></a>
-              <a href="" onclick="event.preventDefault(); if(confirm('Apakah anda yakin?')){$('form#hapus').attr('action', '{{ route ('Pengeluaran.destroy', ['Pengeluaran' => $value->id_Pengeluaran]) }}').submit(); }">
-                <button type="button" class="btn  btn-danger">Delete</button></a>
+                <a href="{{ route('Pengeluaran.edit', ['Pengeluaran' => $value->id_pengeluaran]) }}"><button type="button" class="btn btn-primary">Update</button></a>
+              <!-- <a href="" onclick="event.preventDefault(); if(confirm('Apakah anda yakin?')){$('form#hapus').attr('action', '{{ route ('Pengeluaran.destroy', ['Pengeluaran' => $value->id_pengeluaran]) }}').submit(); }">
+                <button type="button" class="btn  btn-danger">Delete</button></a> -->
               </td>
             </tr>
               @endforeach

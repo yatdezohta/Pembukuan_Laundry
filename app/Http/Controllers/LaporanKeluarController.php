@@ -3,32 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Customer;
+use App\Pengeluaran;
 
-class CustomerController extends Controller
+class LaporanKeluarController extends Controller
 {
-
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-
-   public function __construct(){
-     $this->middleware('auth');
-   }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $customer = Customer::all();
-        return view('customer.cust', [
-          'data' => $customer
-        ]);
+        //
     }
 
     /**
@@ -38,9 +24,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customer.tambah', [
-          'data' => new Customer(),
-        ]);
+        //
     }
 
     /**
@@ -51,12 +35,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer();
-        $customer->nama_cust = $request->input('nama_cust');
-        $customer->nohp = $request->input('nohp');
-        $customer->alamat = $request->input('alamat');
-        $customer->save();
-        return redirect ('Cust');
+        //
     }
 
     /**
@@ -78,9 +57,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        return view('customer.tambah',[
-          'data'=>Customer::findOrFail($id)
-        ]);
+        //
     }
 
     /**
@@ -92,12 +69,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $customer = Customer::findOrFail($id);
-      $customer->nama_cust = $request->input('nama_cust');
-      $customer->nohp = $request->input('nohp');
-      $customer->alamat = $request->input('alamat');
-      $customer->save();
-      return redirect('Cust');
+        //
     }
 
     /**
@@ -108,8 +80,6 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-      $customer = Customer::findOrFail($id);
-      $customer->delete();
-      return redirect('Cust');
+        //
     }
 }

@@ -28,6 +28,9 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<?php
+use Illuminate\Support\Facades\Auth;
+ ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
@@ -137,10 +140,12 @@
           </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-              <!-- <span class="hidden-xs">Alexander Pierce</span> -->
-            <!-- </a> --> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+                @auth
+               <span class="hidden-xs">{{Auth::user()->nama_user}}</span>
+               @endauth
+            </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <!-- <li class="user-header"> -->
@@ -172,7 +177,12 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div> -->
                 <div class="pull-right">
-                  <a href="login" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">Sign out</a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
                 </div>
               </li>
             </ul>
@@ -245,6 +255,18 @@
           <a href="Pengeluaran">
             <span>Pengeluaran</span>
           </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+          <span>Laporan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="LapMasuk"><i class="fa fa-circle-o"></i>Laporan Pemasukan</a></li>
+            <li><a href="Tipe"><i class="fa fa-circle-o"></i>Laporan Pengeluaran</a></li>
+          </ul>
         </li>
         <!-- <li>
           <a href="Laporan">

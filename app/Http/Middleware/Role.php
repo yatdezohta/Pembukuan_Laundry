@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
-class RoleMiddleware
+use Illuminate\Support\Facades\Auth;
+class Role
 {
     /**
      * Handle an incoming request.
@@ -13,10 +13,14 @@ class RoleMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, String $level, String $level2=null)
+    public function handle($request, Closure $next, $role)
     {
-      if($level == $request->user()->level || $level2 == $request->user()->level )
+      if (Auth::check() && Auth::user()->role->name != $role) {
+            return redirect()->route('login');
+        }
         return $next($request);
-    }
-    return redirect('/');s
+
+
+
+}
 }

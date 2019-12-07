@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
-use App\customers;
+use App\Customer;
 
-class LaporanController extends Controller
+class LaporanMasukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,13 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        //
+      $transaksi = Transaksi::all();
+      $customer = Customer::all();
+      return view('Laporan.Laporan_Masuk', [
+        'data' => $transaksi,
+        'cust' => $customer
+
+      ]);
     }
 
     /**
